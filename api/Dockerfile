@@ -5,7 +5,7 @@ CMD ["bash"]
 # test-and-build
 FROM base AS test-and-build
 COPY . /workspace
-RUN gradle build
+RUN chmod +x ./gradlew && ./gradlew build
 
 # production
 FROM openjdk:17 AS production
